@@ -1,0 +1,4 @@
+In main:
+have a while loop:
+wait for a packet from device
+send that packet to the server

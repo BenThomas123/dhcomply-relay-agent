@@ -20,6 +20,8 @@
 #include <cjson/cJSON.h>
 #include <netinet/ip6.h>
 #include <netinet/icmp6.h>
+#include <pthread.h>
+#include <fcntl.h>
 
 #define MAC_ADDRESS_LENGTH 6
 

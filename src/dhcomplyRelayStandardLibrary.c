@@ -1,6 +1,5 @@
 #include "dhcomplyRelayStandardLibrary.h"
 
-// stdlib addons
 void valid_file_pointer(FILE *fp) {
     if (fp == NULL) {
         perror("Invalid file pointer, make sure your config file is in the correct location at /etc/dhcomply.conf\n");
@@ -9,8 +8,7 @@ void valid_file_pointer(FILE *fp) {
 }
 
 void valid_memory_allocation(void *allocated_memory) {
-    if (allocated_memory == NULL)
-    {
+    if (allocated_memory == NULL) {
         perror("For some reason memory was not able to be allocated\n");
         exit(-1);
     }
@@ -23,23 +21,19 @@ void valid_socket(int sockfd) {
     }
 }
 
-// string library add ons
 char *trim(char *str) {
     char *end;
 
-    // Trim leading space
     while (isspace((unsigned char)*str))
         str++;
 
-    if (*str == 0) // All spaces?
+    if (*str == 0)
         return str;
 
-    // Trim trailing space
     end = str + strlen(str) - 1;
     while (end > str && isspace((unsigned char)*end))
         end--;
 
-    // Write new null terminator
     *(end + 1) = '\0';
 
     return str;
